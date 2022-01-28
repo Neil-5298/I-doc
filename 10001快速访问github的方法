@@ -1,0 +1,39 @@
+一、快速访问github的方法
+二、简要：修改hosts文件，达到绕过国内DNS解析的目的，提升Github访问速度。
+三、查询IP
+	通过以下网站
+		https://www.ipaddress.com/
+		http://ping.chinaz.com/
+	直接查询如下网站的IP地址
+		github.com
+		assets-cdn.github.com
+		github.global.ssl.fastly.net
+
+四、修改hosts文件
+	linux系统：/etc/hosts
+	打开hosts文件后，在末尾添加三行，其中的IP地址为前面查询到的地址
+#github
+140.82.114.4 github.com
+185.199.108.153 assets-cdn.github.com
+199.232.69.194 github.global.ssl.fastly.net
+
+五、示例方法
+127.0.0.1       localhost
+127.0.1.1       lg
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+#github
+140.82.114.4 github.com
+185.199.108.153 assets-cdn.github.com
+199.232.69.194 github.global.ssl.fastly.net
+
+
+六、访问github
+	完成以上五步之后，就可以快速访问github
+
+
