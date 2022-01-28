@@ -8,12 +8,13 @@
 		github.com
 		assets-cdn.github.com
 		github.global.ssl.fastly.net
+        备注:网址(http://ping.chinaz.com/)可以检测响应最快的站点ip,可选择在响应时间排序表中响应最快的ip地址使用
 
 四、修改hosts文件
 	linux系统：/etc/hosts
 	打开hosts文件后，在末尾添加三行，其中的IP地址为前面查询到的地址
 #github
-140.82.114.4 github.com
+140.82.121.3 github.com
 185.199.108.153 assets-cdn.github.com
 199.232.69.194 github.global.ssl.fastly.net
 
