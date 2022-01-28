@@ -13,10 +13,18 @@
 四、修改hosts文件
 	linux系统：/etc/hosts
 	打开hosts文件后，在末尾添加三行，其中的IP地址为前面查询到的地址
+	可以将响应速度最快的几个站点ip都添加上，dns会依次访问，实现快速访问
+	
 #github
-140.82.121.3 github.com
+140.82.114.4 github.com
+15.164.81.167 github.com
+52.192.72.89 github.com
+140.82.121.4 github.com
+52.192.72.89 github.com
+13.114.40.48 github.com
 185.199.108.153 assets-cdn.github.com
 199.232.69.194 github.global.ssl.fastly.net
+
 
 五、示例方法
 127.0.0.1       localhost
