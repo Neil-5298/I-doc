@@ -1,0 +1,43 @@
+centos7安装运行wireshark
+
+一、查看可安装程序
+$yum search wireshark
+	[lg@bogon tmp]$ yum search wireshark
+	已加载插件：fastestmirror, langpacks
+	Loading mirror speeds from cached hostfile
+	 * base: mirror.lzu.edu.cn
+	 * centos-sclo-rh: mirror.lzu.edu.cn
+	 * centos-sclo-sclo: mirrors.dgut.edu.cn
+	 * epel: mirror.lzu.edu.cn
+	 * extras: mirror.lzu.edu.cn
+	 * nux-dextop: mirror.li.nux.ro
+	 * updates: mirrors.dgut.edu.cn
+	============================ N/S matched: wireshark ============================
+	wireshark-devel.i686 : Development headers and libraries for wireshark
+	wireshark-devel.x86_64 : Development headers and libraries for wireshark
+	wireshark-gnome.x86_64 : Gnome desktop integration for wireshark
+	wireshark.i686 : Network traffic analyzer
+	wireshark.x86_64 : Network traffic analyzer
+
+	  名称和简介匹配 only，使用“search all”试试。
+
+二、安装程序
+[lg@bogon tmp]$ sudo yum install wireshark.x86_64
+[lg@bogon tmp]$ sudo yum install wireshark-gnome.x86_64
+
+三、运行程序
+3.1使用普通用户运行
+[lg@bogon tmp]$ wireshark
+	弹出界面提示
+	(Couldn't run /usr/sbin/dumpcap in child process: 权限不够
+	Are you a member of the 'wireshark' group? Try running
+	'usermod -a -G wireshark _your_username_' as root)
+3.2使用sudo 或root用户运行
+[lg@bogon tmp]$ sudo wireshark
+[sudo] lg 的密码：
+#输入用户密码后，wireshark运行界面正常
+
+
+
+
+
