@@ -1,0 +1,8 @@
+centos7磁盘系统备份与还原
+第一步：目标数据备份，以/home为例
+xfsdump -f "dump文件存放的绝对路径加文件名" "需要备份的目录"
+比如
+xfsdump -f /opt/home.dump /home
+
+第二步:dump备份数据还原
+xfsrestore -f /opt/home.dump /home
