@@ -1,0 +1,61 @@
+                  通过Git在本地局域网中的两台电脑间同步代码
+环境要求：
+	sshd服务要启动
+	ubuntu安装sshd方法:lg@ubuntu:~/Templates/worktest$ sudo apt-get install openssh-server
+	查看sshd服务是否启动正常:lg@ubuntu:~/Templates/worktest$ systemctl status sshd
+
+一般情况下同步代码可以通过在GitHub/GitLab等网站新建远程仓库，所有机器都向仓库推送或者从仓库下拉更新。
+
+上述过程步骤也不算复杂，不过有时候我们考虑到仓库的安全性等因素，只想在局域网内共享仓库，并且允许局域网中指定的机器推送或下拉更新。
+
+这就是本文试图记录的操作过程的背景。
+
+一、新建中转仓库
+中转仓库其实是一个裸仓库，这个仓库文件夹里只有.git里的版本信息，没有代码。
+所有工作者都只与中转仓库建立联系，这样冲突只会发生在中转仓库，各机本地代码不会冲突，从而最大程度上避免混乱。
+lg@ubuntu:~/Templates$ mkdir test.git
+lg@ubuntu:~/Templates$ ls
+test.git
+lg@ubuntu:~/Templates$ cd test.git/
+lg@ubuntu:~/Templates/test.git$ git --bare init --shared
+Initialized empty shared Git repository in /home/lg/Templates/test.git/
+lg@ubuntu:~/Templates/test.git$ pwd
+/home/lg/Templates/test.git
+lg@ubuntu:~/Templates/test.git$ ls
+branches  config  description  HEAD  hooks  info  objects  refs
+
+裸仓库创建完成，下面进行本地共享和局域网其他机器共享方法
+
+二、构建本机克隆仓库
+在设置中转仓库的机器上新建克隆仓库，可以修改代码并上传。
+2.1将中转裸仓库克隆当目标目录
+lg@ubuntu:~/Templates/worktree$ git clone /home/lg/Templates/test.git
+Cloning into 'test'...
+warning: You appear to have cloned an empty repository.
+done.
+lg@ubuntu:~/Templates/worktree$ ls
+test
+2.2进入工作区，修改文件保存并上传到中转仓库
+lg@ubuntu:~/Templates/worktree/test$ echo "this is h file" > test.h
+lg@ubuntu:~/Templates/worktree/test$ echo "this is c file" > test.c
+lg@ubuntu:~/Templates/worktree/test$ git add .
+lg@ubuntu:~/Templates/worktree/test$ git commit -m "init"
+lg@ubuntu:~/Templates/worktree/test$ git push origin master:TEST_main_branch
+备注:也可以写成git push origin master，具体有什么区别，待验证
+
+三、在其他机器同步仓库
+在另外的机器上新建克隆仓库，通过ssh建立仓库之间的连接。可以用于拉取和上传更新。
+
+通过ssh的方式需要知道中转仓库所在机器的用户名和IP地址，基本格式为git clone ssh://username@ipaddr/path/to/repo.git localrepo.git。
+3.1从中转仓库拉取资源
+lg@ubuntu:~/Templates/worktest$ git clone ssh://lg@192.168.209.129/home/lg/Templates/test.git
+3.2保存修改并推送到中转仓库。
+lg@ubuntu:~/Templates/worktest/test$ echo "this is h file" >> test/test.h
+lg@ubuntu:~/Templates/worktest/test$ git commit -m "modify 01" test.h 
+lg@ubuntu:~/Templates/worktest/test$ git push origin master 
+
+完成
+
+
+
+
