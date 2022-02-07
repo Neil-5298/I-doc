@@ -53,3 +53,19 @@
 百度网盘下载：
 链接：https://pan.baidu.com/s/1ZrySxRg6x00nWx8TljJPqA 
 提取码：98hh
+
+六、安装Wireshark
+下载地址:https://www.wireshark.org/
+功能介绍：网络抓包工具，主要用于流量分析
+
+七、安装科来数据包播放器和科来数据包生成器
+下载地址：http://www.colasoft.com.cn/
+功能介绍：用于网络开发的调试工具
+	科来数据包生成器制作满足指定需求的网络数据包
+	安装科来数据包播放器将数据包发向指定的网口(支持物理网口和虚拟网口)
+
+
+
+
+
+
