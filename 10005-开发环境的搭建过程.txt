@@ -1,0 +1,45 @@
+                                                          开发环境的搭建过程
+
+一、安装VMware Workstation
+下载地址：https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html
+功能介绍:安装虚拟机的工具
+激活方法介绍：
+	VMware Workstation Pro 16 许可证密钥，批量永久激活！
+
+	ZF3R0-FHED2-M80TY-8QYGC-NPKYF
+
+	YF390-0HF8P-M81RQ-2DXQE-M2UT6
+
+	ZF71R-DMX85-08DQY-8YMNC-PPHV8 
+
+	https://www.cnblogs.com/startl/p/15520629.html
+	备注：使用此方法能激活，也许过段时间会失效，需要重新找新的破解方法
+
+二、安装Source Insight
+下载地址：https://www.sourceinsight.com/
+功能介绍:代码编辑器
+激活方法介绍：
+	1.下载Source Insight 4.0的安装程序，首次启动选择授权方式，这里选择第二个选项，先试用30天, 生成证书文件(si4.lic).
+	2.修改sourceinsight4.exe
+			用16进制编辑器打开sourceinsight4.exe文件，找到第二个 c800 0000 742a 83bc 2408 这一段，修改74 为 eb
+	3.修改license文件
+		打开 C:\ProgramData\Source Insight\4.0\si4.lic
+		将Expiration=”2022-XX-XX”中的2022修改为2030，试用期将永不过期。
+	备注:此激活方法有明显的缺陷，每次打开source insight软件，都会弹出激活或使用提示窗。准确来说是延长了试用期
+	
+三、安装Nodepad++
+下载地址:https://notepad-plus-plus.org/
+功能介绍：好用的文件编辑工具，插件丰富，可16进制查看可执行文件，可json字符串格式查看数据
+下载介绍：
+	1. 官网有时会被屏蔽掉，打不开网页。可多次进行访问或换个时间再访问。
+	2. 如何官网一时打不开，又着急使用，可在网上下载一个临近版本，选择英语模式安装，在联网情景下，软件会自动检测版本信息并提示用户是否要升级。
+	
+四、安装GitHubDesktopSetup-x64
+	下载地址:
+			https://git-scm.com/download/win
+			https://git-scm.com/download/
+	功能介绍：Git comes with built-in GUI tools (git-gui, gitk), but there are several third-party tools for users looking 
+			  for a platform-specific experience. 直白的说就是git的客户端(安装在桌面机，方便版本管理，实在太好用了)
+五、安装Git Bash
+下载地址：https://github.com/git-for-windows/git/releases/
+功能介绍：在windows上安装git客户端命令行工具
