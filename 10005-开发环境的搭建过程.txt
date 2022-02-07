@@ -33,6 +33,9 @@
 下载介绍：
 	1. 官网有时会被屏蔽掉，打不开网页。可多次进行访问或换个时间再访问。
 	2. 如何官网一时打不开，又着急使用，可在网上下载一个临近版本，选择英语模式安装，在联网情景下，软件会自动检测版本信息并提示用户是否要升级。
+百度网盘下载：
+链接：https://pan.baidu.com/s/1qo2t-b_eYrHqOadvpEFGDQ 
+提取码：har4
 	
 四、安装GitHubDesktopSetup-x64
 	下载地址:
@@ -40,6 +43,13 @@
 			https://git-scm.com/download/
 	功能介绍：Git comes with built-in GUI tools (git-gui, gitk), but there are several third-party tools for users looking 
 			  for a platform-specific experience. 直白的说就是git的客户端(安装在桌面机，方便版本管理，实在太好用了)
+百度网盘下载：
+链接：https://pan.baidu.com/s/1ZrySxRg6x00nWx8TljJPqA 
+提取码：98hh
+
 五、安装Git Bash
 下载地址：https://github.com/git-for-windows/git/releases/
 功能介绍：在windows上安装git客户端命令行工具
+百度网盘下载：
+链接：https://pan.baidu.com/s/1ZrySxRg6x00nWx8TljJPqA 
+提取码：98hh
